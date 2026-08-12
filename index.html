@@ -53,12 +53,13 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebGL.loader.js";
+      var buildRevision = "20260812-monochrome-analog-compact-hud";
+      var loaderUrl = buildUrl + "/WebGL.loader.js?v=" + buildRevision;
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/WebGL.data",
-        frameworkUrl: buildUrl + "/WebGL.framework.js",
-        codeUrl: buildUrl + "/WebGL.wasm",
+        dataUrl: buildUrl + "/WebGL.data?v=" + buildRevision,
+        frameworkUrl: buildUrl + "/WebGL.framework.js?v=" + buildRevision,
+        codeUrl: buildUrl + "/WebGL.wasm?v=" + buildRevision,
         streamingAssetsUrl: "StreamingAssets",
         companyName: "HALKA",
         productName: "みねだんじょん",
