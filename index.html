@@ -53,7 +53,7 @@
       }
 
       var buildUrl = "Build";
-      var buildRevision = "20260812-monochrome-analog-compact-hud";
+      var buildRevision = "20260815-kaykit-casual-audio-hud";
       var loaderUrl = buildUrl + "/WebGL.loader.js?v=" + buildRevision;
       var config = {
         arguments: [],
@@ -89,7 +89,10 @@
       // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
       // expected to change.
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      var compactLayout = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+        || window.matchMedia("(max-width: 980px), (max-height: 640px)").matches;
+
+      if (compactLayout) {
         // Mobile device style: fill the whole browser client area with the game canvas:
 
         var meta = document.createElement('meta');
